@@ -13,5 +13,9 @@ namespace IServicios.Articulo
 
 		bool VerificarSiExiste(string datoVerificar, long? entidadId = null);
 
+		ArticuloVentaDto ObtenerPorCodigo(string codigo);
+
+		IEnumerable<ArticuloVentaDto> ObtenerLookUp(string cadenaBuscar);
+
 	}
 }

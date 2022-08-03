@@ -52,11 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articulo\DTOs\ArticuloDto.cs" />
+    <Compile Include="Articulo\DTOs\ArticuloVentaDto.cs" />
     <Compile Include="Articulo\IArticuloServicio.cs" />
     <Compile Include="Base\BaseDto.cs" />
     <Compile Include="Base\IServicio.cs" />
     <Compile Include="Base\IServicioAbm.cs" />
     <Compile Include="Base\IServicioConsulta.cs" />
+    <Compile Include="Comprobante\DTOs\ComprobanteDto.cs" />
+    <Compile Include="Comprobante\DTOs\DetalleComprobanteDto.cs" />
+    <Compile Include="Comprobante\DTOs\FacturaDto.cs" />
+    <Compile Include="Comprobante\IComprobanteServicio.cs" />
+    <Compile Include="Comprobante\IFacturaServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rubro\DTOs\RubroDto.cs" />
     <Compile Include="Rubro\IRubroServicio.cs" />

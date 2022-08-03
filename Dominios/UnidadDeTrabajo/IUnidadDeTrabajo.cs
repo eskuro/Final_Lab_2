@@ -19,5 +19,7 @@ namespace Dominios.UnidadDeTrabajo
 
 		IRepositorio<Articulo> ArticuloRepositorio { get; }
 
+		IFacturaRepositorio FacturaRepositorio { get; }
+
 	}
 }

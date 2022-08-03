@@ -3,8 +3,10 @@ using Dominios.UnidadDeTrabajo;
 using Infraestructura.Repositorio;
 using Infraestructura.UnidadDeTrabajo;
 using IServicios.Articulo;
+using IServicios.Comprobante;
 using IServicios.Rubro;
 using Servicios.Articulo;
+using Servicios.Comprobante;
 using Servicios.Rubro;
 using StructureMap;
 using System;
@@ -34,6 +36,8 @@ namespace AplicacionIoc
 				x.For<IArticuloServicio>().Use<ArticuloServicio>();
 
 				x.For<IRubroServicio>().Use<RubroServicio>();
+
+				x.For<IFacturaServicio>().Use<FacturaServicio>();
 
 
 			});

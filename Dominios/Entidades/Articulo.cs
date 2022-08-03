@@ -26,7 +26,7 @@ namespace Dominios.Entidades
 
 
 
-
+		public virtual ICollection<DetalleComprobante> DetalleComprobantes { get; set; }
 		public virtual Rubro Rubro { get; set; }
 
 	}

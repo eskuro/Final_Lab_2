@@ -74,12 +74,32 @@
     <Compile Include="ArticuloConsulta.Designer.cs">
       <DependentUpon>ArticuloConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArticuloLookUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticuloLookUp.Designer.cs">
+      <DependentUpon>ArticuloLookUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarCantidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarCantidad.Designer.cs">
+      <DependentUpon>CambiarCantidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacturaView.cs" />
+    <Compile Include="ItemView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RubroConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RubroConsulta.Designer.cs">
       <DependentUpon>RubroConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -102,8 +122,14 @@
     <EmbeddedResource Include="ArticuloConsulta.resx">
       <DependentUpon>ArticuloConsulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CambiarCantidad.resx">
+      <DependentUpon>CambiarCantidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RubroConsulta.resx">
       <DependentUpon>RubroConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta.resx">
+      <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

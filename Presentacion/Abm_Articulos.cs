@@ -78,7 +78,7 @@ namespace Presentacion
 		{
 			var nuevoRegistro = new ArticuloDto
 			{
-				Codigo = int.Parse(txtCodigo.Text),				
+				Codigo = txtCodigo.Text,				
 				Descripcion = txtDescripcion.Text,
 				Abreviatura = txtAbreviatura.Text,										
 				RubroId = (long)cmbRubro.SelectedValue,				
@@ -94,7 +94,7 @@ namespace Presentacion
 			var modificarRegistro = new ArticuloDto
 			{
 				Id = EntidadId.Value,
-				Codigo = int.Parse(txtCodigo.Text),
+				Codigo = txtCodigo.Text,
 				Descripcion = txtDescripcion.Text,
 				Abreviatura = txtAbreviatura.Text,
 				RubroId = (long)cmbRubro.SelectedValue,

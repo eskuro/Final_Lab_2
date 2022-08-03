@@ -55,9 +55,11 @@
             this.btnActualizar,
             this.btnSalir});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+			this.toolStrip1.MaximumSize = new System.Drawing.Size(531, 420);
+			this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Padding = new System.Windows.Forms.Padding(3);
-			this.toolStrip1.Size = new System.Drawing.Size(510, 58);
+			this.toolStrip1.Size = new System.Drawing.Size(531, 58);
 			this.toolStrip1.TabIndex = 0;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
@@ -118,12 +120,12 @@
 			this.pnlBusqueda.Controls.Add(this.txtBuscar);
 			this.pnlBusqueda.Location = new System.Drawing.Point(0, 61);
 			this.pnlBusqueda.Name = "pnlBusqueda";
-			this.pnlBusqueda.Size = new System.Drawing.Size(510, 27);
+			this.pnlBusqueda.Size = new System.Drawing.Size(531, 27);
 			this.pnlBusqueda.TabIndex = 1;
 			// 
 			// btnBuscar
 			// 
-			this.btnBuscar.Location = new System.Drawing.Point(344, 1);
+			this.btnBuscar.Location = new System.Drawing.Point(435, 0);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(75, 23);
 			this.btnBuscar.TabIndex = 1;
@@ -132,7 +134,7 @@
 			// 
 			// txtBuscar
 			// 
-			this.txtBuscar.Location = new System.Drawing.Point(3, 3);
+			this.txtBuscar.Location = new System.Drawing.Point(50, 3);
 			this.txtBuscar.Name = "txtBuscar";
 			this.txtBuscar.Size = new System.Drawing.Size(335, 20);
 			this.txtBuscar.TabIndex = 0;
@@ -141,12 +143,12 @@
 			// dgvGrilla
 			// 
 			this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvGrilla.Location = new System.Drawing.Point(0, 94);
+			this.dgvGrilla.Location = new System.Drawing.Point(0, 90);
 			this.dgvGrilla.MultiSelect = false;
 			this.dgvGrilla.Name = "dgvGrilla";
 			this.dgvGrilla.ReadOnly = true;
 			this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvGrilla.Size = new System.Drawing.Size(510, 356);
+			this.dgvGrilla.Size = new System.Drawing.Size(531, 330);
 			this.dgvGrilla.TabIndex = 5;
 			this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
 			// 
@@ -154,7 +156,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(510, 450);
+			this.ClientSize = new System.Drawing.Size(531, 420);
 			this.Controls.Add(this.dgvGrilla);
 			this.Controls.Add(this.pnlBusqueda);
 			this.Controls.Add(this.toolStrip1);

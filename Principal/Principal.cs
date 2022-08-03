@@ -62,5 +62,10 @@ namespace Principal
 
 			AgregarFormulario(nuevoRubro);
 		}
+
+		private void generarVentaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ObjectFactory.GetInstance<Venta>().Show();
+		}
 	}
 }

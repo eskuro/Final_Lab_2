@@ -52,11 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Articulo.cs" />
+    <Compile Include="Entidades\Comprobante.cs" />
+    <Compile Include="Entidades\DetalleComprobante.cs" />
     <Compile Include="Entidades\EntidadBase.cs" />
+    <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\Rubro.cs" />
     <Compile Include="MetaData\IArticulo.cs" />
+    <Compile Include="MetaData\IComprobante.cs" />
+    <Compile Include="MetaData\IDetalleComprobante.cs" />
+    <Compile Include="MetaData\IFactura.cs" />
     <Compile Include="MetaData\IRubro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\IFacturaRepositorio.cs" />
     <Compile Include="Repositorio\IRepositorio.cs" />
     <Compile Include="UnidadDeTrabajo\IUnidadDeTrabajo.cs" />
   </ItemGroup>

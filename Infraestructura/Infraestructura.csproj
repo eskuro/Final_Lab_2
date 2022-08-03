@@ -56,6 +56,14 @@
     <Compile Include="Migrations\202208021756200_inicial.designer.cs">
       <DependentUpon>202208021756200_inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202208030219161_comprobanteMigr.cs" />
+    <Compile Include="Migrations\202208030219161_comprobanteMigr.designer.cs">
+      <DependentUpon>202208030219161_comprobanteMigr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208031458171_Facturas.cs" />
+    <Compile Include="Migrations\202208031458171_Facturas.designer.cs">
+      <DependentUpon>202208031458171_Facturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -63,6 +71,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Repositorio\FacturaRepositorio.cs" />
     <Compile Include="Repositorio\Repositorio.cs" />
     <Compile Include="UnidadDeTrabajo\UnidadDeTrabajo.cs" />
   </ItemGroup>
@@ -87,6 +96,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202208021756200_inicial.resx">
       <DependentUpon>202208021756200_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208030219161_comprobanteMigr.resx">
+      <DependentUpon>202208030219161_comprobanteMigr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208031458171_Facturas.resx">
+      <DependentUpon>202208031458171_Facturas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,7 +12,7 @@ namespace Infraestructura.Repositorio
 {
 	public class Repositorio<TEntidad> : IRepositorio<TEntidad> where TEntidad : EntidadBase
 	{
-		private Datacontext _context;
+		protected readonly Datacontext _context;
 
 		public Repositorio(Datacontext context)
 		{
@@ -47,7 +47,7 @@ namespace Infraestructura.Repositorio
 			_context.Entry(entidad).State = EntityState.Modified;
 		}
 
-		public TEntidad Obtener(long entidadId, string propiedadNavegacion = "")
+		public virtual TEntidad Obtener(long entidadId, string propiedadNavegacion = "")
 		{
 			var resultado = propiedadNavegacion.Split(new[] { ',' },
 				StringSplitOptions.RemoveEmptyEntries).Aggregate<string,
@@ -56,7 +56,7 @@ namespace Infraestructura.Repositorio
 			return resultado.FirstOrDefault(x => x.Id == entidadId);
 		}
 
-		public IEnumerable<TEntidad> Obtener(Expression<Func<TEntidad, bool>> filtro = null, string propiedadesNavegacion = "")
+		public virtual IEnumerable<TEntidad> Obtener(Expression<Func<TEntidad, bool>> filtro = null, string propiedadesNavegacion = "")
 		{
 			var context = ((IObjectContextAdapter)_context).ObjectContext;
 			var resultadoClient = context.CreateObjectSet<TEntidad>();

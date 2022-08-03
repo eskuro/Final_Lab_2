@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace Servicios.Articulo
 {
+
+
 	public class ArticuloServicio : IArticuloServicio
 	{
 		private readonly IUnidadDeTrabajo _unidadDeTrabajo;
@@ -29,15 +31,16 @@ namespace Servicios.Articulo
 
 		public void Insertar(BaseDto dtoEntidad)
 		{
+			
 			var dto = (ArticuloDto)dtoEntidad;
-
+		
 			var entidad = new Dominios.Entidades.Articulo
 			{
 				RubroId = dto.RubroId,
 				EstaEliminado = dto.EstaEliminado,
 				Descripcion = dto.Descripcion,
 				Abreviatura = dto.Abreviatura,
-				Codigo = dto.Codigo,
+				Codigo = int.Parse(dto.Codigo),
 				Precio = dto.Precio,
 				Stock = dto.Stock
 
@@ -73,7 +76,7 @@ namespace Servicios.Articulo
 				Descripcion = entidad.Descripcion,
 				EstaEliminado = entidad.EstaEliminado,
 				Abreviatura = entidad.Abreviatura,
-				Codigo = entidad.Codigo,
+				Codigo = entidad.Codigo.ToString(),
 				Precio = entidad.Precio,
 				Stock = entidad.Stock,
 
@@ -82,6 +85,9 @@ namespace Servicios.Articulo
 
 		public IEnumerable<BaseDto> Obtener(string cadenaBuscar)
 		{
+			
+
+
 			Expression<Func<Dominios.Entidades.Articulo, bool>> filtro = x =>
 			x.Descripcion.Contains(cadenaBuscar)
 			|| x.Rubro.Descripcion.Contains(cadenaBuscar);
@@ -95,12 +101,54 @@ namespace Servicios.Articulo
 				Descripcion = x.Descripcion,
 				EstaEliminado = x.EstaEliminado,
 				Abreviatura = x.Abreviatura,
-				Codigo = x.Codigo,
+				Codigo = x.Codigo.ToString(),
 				Precio = x.Precio,
 				Stock = x.Stock,
 
 			}).OrderBy(x => x.Descripcion)
 			.ToList(); 
+		}
+
+		public IEnumerable<ArticuloVentaDto> ObtenerLookUp(string cadenaBuscar)
+		{
+			int.TryParse(cadenaBuscar, out int codigoArticulo);
+
+			Expression<Func<Dominios.Entidades.Articulo, bool>> filtro = x => !x.EstaEliminado
+																			 && x.Codigo.ToString() == cadenaBuscar
+																			 || x.Descripcion.Contains(cadenaBuscar)
+																			 || x.Codigo == codigoArticulo;
+
+			return _unidadDeTrabajo.ArticuloRepositorio.Obtener(filtro,
+					"")
+				.Select(x => new ArticuloVentaDto()
+				{
+					Id = x.Id,					
+					Descripcion = x.Descripcion,				
+					Abreviatura = x.Abreviatura,
+					Codigo = x.Codigo.ToString(),
+					Precio = x.Precio,
+					Stock = x.Stock,
+				}).ToList();
+		}
+
+		public ArticuloVentaDto ObtenerPorCodigo(string codigo)
+		{
+			 var fechaActual = DateTime.Now;
+
+			int.TryParse(codigo, out int _codigo);
+
+			return _unidadDeTrabajo.ArticuloRepositorio.Obtener(x => x.Codigo.ToString() == codigo || x.Codigo == _codigo,
+					"Rubro")
+				.Select(x => new ArticuloVentaDto()
+				{
+					Id = x.Id,					
+					Codigo = x.Codigo.ToString(),
+					Descripcion = x.Descripcion,
+					Precio = x.Precio,
+					Stock = x.Stock,
+					Abreviatura = x.Abreviatura,
+					
+				}).FirstOrDefault();
 		}
 
 		public bool VerificarSiExiste(string datoVerificar, long? entidadId = null)
@@ -116,5 +164,7 @@ namespace Servicios.Articulo
 			StringComparison.CurrentCultureIgnoreCase))
 			.Any();
 		}
+
+		
 	}
 }

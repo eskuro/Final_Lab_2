@@ -23,5 +23,11 @@ namespace Infraestructura
 		public DbSet<Articulo> Articulos { get; set; }
 
 		public DbSet<Rubro>Rubros { get; set; }
+
+		public DbSet<Comprobante> Comprobantes { get; set; }
+
+		public DbSet<DetalleComprobante> DetalleComprobantes { get; set; }
+
+		public DbSet<Factura> Facturas { get; set; }
 	}
 }

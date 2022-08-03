@@ -64,5 +64,13 @@ namespace Infraestructura.UnidadDeTrabajo
 		public IRepositorio<Rubro> RubroRepositorio => rubroRepositorio
 													   ?? (rubroRepositorio =
 														   new Repositorio<Rubro>(_context));
+
+
+
+		private IFacturaRepositorio facturaRepositorio;
+
+		public IFacturaRepositorio FacturaRepositorio => facturaRepositorio
+															 ?? (facturaRepositorio =
+																 new FacturaRepositorio(_context));
 	}
 }
